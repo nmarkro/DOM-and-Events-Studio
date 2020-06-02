@@ -28,4 +28,30 @@ this.window.addEventListener("load", function() {
             document.getElementById("spaceShuttleHeight").innerHTML = 0;
         }
     });
+
+    document.getElementById("rocket").style.bottom = '0px';
+    document.getElementById("rocket").style.right = (document.getElementById('shuttleBackground').offsetWidth / 2) - (document.getElementById('rocket').clientWidth / 2) + 'px';
+
+    let translate = function(x, y) {
+        let rocket = document.getElementById("rocket");
+
+        rocket.style.bottom = parseInt(rocket.style.bottom, 10) + y + "px";
+        rocket.style.right = parseInt(rocket.style.right, 10) + x + "px";
+
+        let spaceShuttleHeight = document.getElementById("spaceShuttleHeight");
+        spaceShuttleHeight.innerHTML = Number(spaceShuttleHeight.innerHTML) + (y * 1000)
+    };
+
+    document.getElementById("upButton").addEventListener("click", function() {
+        translate(0, 10)
+    });
+    document.getElementById("downButton").addEventListener("click", function() {
+        translate(0, -10)
+    });
+    document.getElementById("leftButton").addEventListener("click", function() {
+        translate(10, 0)
+    });
+    document.getElementById("rightButton").addEventListener("click", function() {
+        translate(-10, 0)
+    });
 });
