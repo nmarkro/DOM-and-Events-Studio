@@ -11,12 +11,19 @@ this.window.addEventListener("load", function() {
         }
     });
 
+    let rocketInit = function() {
+        document.getElementById("rocket").style.bottom = '0px';
+        document.getElementById("rocket").style.right = (document.getElementById('shuttleBackground').offsetWidth / 2) - (document.getElementById('rocket').width / 2) + 'px';    
+    };
+
     this.document.getElementById("landing").addEventListener("click", function(event) {
         window.alert("The shuttle is landing. Landing gear engaged.");
 
         document.getElementById("flightStatus").innerHTML = "The shuttle has landed.";
         document.getElementById("shuttleBackground").style.backgroundColor = 'green';
         document.getElementById("spaceShuttleHeight").innerHTML = 0;
+
+        rocketInit();
     });
 
     this.document.getElementById("missionAbort").addEventListener("click", function(event) {
@@ -26,12 +33,12 @@ this.window.addEventListener("load", function() {
             document.getElementById("flightStatus").innerHTML = "Mission aborted.";
             document.getElementById("shuttleBackground").style.backgroundColor = 'green';
             document.getElementById("spaceShuttleHeight").innerHTML = 0;
+
+            rocketInit();
         }
     });
 
-    document.getElementById("rocket").style.bottom = '0px';
-    document.getElementById("rocket").style.right = (document.getElementById('shuttleBackground').offsetWidth / 2) - (document.getElementById('rocket').width / 2) + 'px';
-
+    rocketInit();
     let translate = function(x, y) {
         let rocket = document.getElementById("rocket");
 
