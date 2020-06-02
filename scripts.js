@@ -1,2 +1,13 @@
-// Write your JavaScript code here.
-// Remember to pay attention to page loading!
+this.window.addEventListener("load", function() {
+    this.document.getElementById("takeoff").addEventListener("click", function(event) {
+        let responce = window.confirm("Confirm that the shuttle is ready for takeoff.");
+
+        if (responce) {
+            document.getElementById("flightStatus").innerHTML = "Shuttle in flight.";
+            document.getElementById("shuttleBackground").style.backgroundColor = 'blue';
+
+            let spaceShuttleHeight = document.getElementById("spaceShuttleHeight");
+            spaceShuttleHeight.innerHTML = Number(spaceShuttleHeight.innerHTML) + 10000
+        }
+    });
+});
