@@ -30,7 +30,7 @@ this.window.addEventListener("load", function() {
     });
 
     document.getElementById("rocket").style.bottom = '0px';
-    document.getElementById("rocket").style.right = (document.getElementById('shuttleBackground').offsetWidth / 2) - (document.getElementById('rocket').clientWidth / 2) + 'px';
+    document.getElementById("rocket").style.right = (document.getElementById('shuttleBackground').offsetWidth / 2) - (document.getElementById('rocket').width / 2) + 'px';
 
     let translate = function(x, y) {
         let rocket = document.getElementById("rocket");
