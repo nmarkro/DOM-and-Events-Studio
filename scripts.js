@@ -10,4 +10,12 @@ this.window.addEventListener("load", function() {
             spaceShuttleHeight.innerHTML = Number(spaceShuttleHeight.innerHTML) + 10000
         }
     });
+
+    this.document.getElementById("landing").addEventListener("click", function(event) {
+        window.alert("The shuttle is landing. Landing gear engaged.");
+
+        document.getElementById("flightStatus").innerHTML = "The shuttle has landed.";
+        document.getElementById("shuttleBackground").style.backgroundColor = 'green';
+        document.getElementById("spaceShuttleHeight").innerHTML = 0;
+    });
 });
